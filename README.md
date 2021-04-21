@@ -30,3 +30,7 @@
 ## Stretch Goals #1
 
 - display the to do list items in order from undone first then all done items
+
+## Stretch Goal #2
+
+- instead of display items in order from undone to done, have another panel called done and when you mark an item as done, have that list item move over to the done section

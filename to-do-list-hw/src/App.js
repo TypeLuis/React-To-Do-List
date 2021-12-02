@@ -1,5 +1,7 @@
 import {useState} from 'react'
 import './App.css';
+import ToDoForm from './components/ToDoForm';
+import ToDoList from './components/ToDoList';
 
 function App() {
 
@@ -8,6 +10,7 @@ function App() {
 
   // Set Switch value determines if value of text input is empty of not
   const [switchValue, setSwitchValue] = useState(false)
+
 
 
   const handleToggle = (index) => {
@@ -31,13 +34,13 @@ function App() {
 
     setSwitchValue(true)
 
-    // creates an object for each todoList
+    // creates an object for submitted form
     const toDoObject = {
       description : toDoForm,
       completed : false
     }
 
-    // adds object to each each itteration of the array
+    // adds object to the toDoList array
     setToDoList([toDoObject, ...toDoList])
 
   }
@@ -48,7 +51,18 @@ function App() {
 
       <h1>My To Do List</h1>
 
-        <div className='toDoForm'>
+
+      <ToDoForm 
+
+        handleSubmit = {handleSubmit}
+        setSwitchValue = {setSwitchValue}
+        setTodo = {setTodo}
+        toDoForm = {toDoForm}
+        switchValue = {switchValue}
+      
+      />
+
+        {/* <div className='toDoForm'>
 
           <h1>Create New To Do</h1>
 
@@ -59,10 +73,27 @@ function App() {
             <input type='submit' id='submit' value='submit' />
           </form>
 
-        </div>
+        </div> */}
 
 {/*  //////////////////////////  */}
-      <div className='to-do-container'>
+
+
+      <ToDoList
+
+        toDoList = {toDoList}
+        handleToggle = {handleToggle}
+
+      />
+
+
+
+
+
+
+
+
+
+      {/* <div className='to-do-container'>
 
         {toDoList.map((item, i)=>{
        
@@ -70,7 +101,7 @@ function App() {
           return(
             
             <>
-                {/* checks if item object key is true */}
+                // checks if item object key is true 
                 {item.completed ?
                 
                   
@@ -98,7 +129,7 @@ function App() {
           )
         })}
 
-      </div>
+      </div> */}
 
           
     </div>

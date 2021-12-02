@@ -13,20 +13,7 @@ function App() {
 
 
 
-  const handleToggle = (index) => {
 
-    
-    // an array of every toDoObject
-    const stateCopy = [...toDoList]
-
-    // gets one object from array through index parameter
-    // changes completed boolean to vice versa true or false
-    stateCopy[index].completed = !stateCopy[index].completed
-
-    // updates the array
-    setToDoList(stateCopy)
-
-  }
 
   const handleSubmit = (e)=>{
 
@@ -42,6 +29,21 @@ function App() {
 
     // adds object to the toDoList array
     setToDoList([toDoObject, ...toDoList])
+
+  }
+
+  const handleToggle = (index) => {
+
+    
+    // an array of every toDoObject
+    const stateCopy = [...toDoList]
+
+    // gets one object from array through index parameter
+    // changes completed boolean to vice versa true or false
+    stateCopy[index].completed = !stateCopy[index].completed
+
+    // updates the array
+    setToDoList(stateCopy)
 
   }
 
@@ -62,21 +64,6 @@ function App() {
       
       />
 
-        {/* <div className='toDoForm'>
-
-          <h1>Create New To Do</h1>
-
-          <form onSubmit={handleSubmit}>
-            <input type="text" className='formText' name='toDo' value={switchValue ? '' : toDoForm } placeholder="Enter Todo Here"
-            onChange={(e)=>{setTodo(e.target.value); setSwitchValue(false)}} />
-
-            <input type='submit' id='submit' value='submit' />
-          </form>
-
-        </div> */}
-
-{/*  //////////////////////////  */}
-
 
       <ToDoList
 
@@ -87,51 +74,6 @@ function App() {
 
 
 
-
-
-
-
-
-
-      {/* <div className='to-do-container'>
-
-        {toDoList.map((item, i)=>{
-       
-          
-          return(
-            
-            <>
-                // checks if item object key is true 
-                {item.completed ?
-                
-                  
-                <div key={i} className='incomplete-div'>
-                  <div>
-                    <p className='to-do-list'>{item.description}</p>
-                  </div>
-                  <p>Mark incomplete</p>
-                  <p className="incomplete" onClick={(e)=>{handleToggle(i)}}>☒</p>    
-                </div>
-              
-              :
-
-                <div key={i} className='complete-div'>
-                  <div>
-                    <p className='to-do-list'>{item.description}</p>
-                  </div>
-                  <p>Mark Complete </p>
-                  <p className="complete" onClick={()=>{handleToggle(i)}}>✅</p>    
-                </div>
-
-              }
-
-            </>          
-          )
-        })}
-
-      </div> */}
-
-          
     </div>
   );
 }

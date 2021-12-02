@@ -2,52 +2,111 @@ body{
   background-color: rgb(71, 121, 121);
 }
 
+body::-webkit-scrollbar {
+  width: 1em;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
 .App {
   text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
-.boxes {
-  display: flex;
-}
 
-.toDoForm, .toDoList{
+.toDoForm{
   margin: 0 30px;
   border: 1px solid gray;
   border-radius: 5%;
   padding: 20px;
+  justify-content: space-evenly;
 }
 
 #submit:hover{
   background-color: yellowgreen;
 }
 
-.incomplete{
+
+.to-do-container{
+  display: flex;
+  flex-direction: row;
+  
+}
+
+.complete-mark{
   color: blueviolet;
-  font-size: 30px;
+  background-color: rgba(130, 214, 214, 0.26);
+  font-size: 50px;
 }
 
-.complete{
-  font-size: 20px;
+.incomplete-mark{
+  background-color: rgba(214, 130, 196, 0.26);
+  font-size: 50px;
+
 }
 
-.complete:hover, .incomplete:hover{
+.complete-mark:hover, .incomplete-mark:hover{
   animation: fade-in 2s ease-in; 
   cursor: pointer;
 }
 
-.complete-div p, .incomplete-div p{
-  margin: 0 5px;
-  display: inline;
-
+.complete, .incomplete {
+  font-size: 30px;
+  font-weight: 700;
+  
 }
 
 
-.to-do-list{
-  font-size: 50px;
+
+.description{
+  font-size: 40px;
+  
+  
 }
+
+.description-div{
+  max-height: 13vmin ;
+  overflow: scroll;
+  overflow-wrap: break-word
+}
+
+
+
+
+
+
+.incomplete-div, .complete-div{
+
+  margin: 0 10vmin;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  
+}
+
+
+
+.complete-box, .incomplete-box {
+  margin: 1em 0;
+
+  min-height: 20em;  
+  min-width: 25em;
+
+  max-width: 25em;
+  max-height: 30em;
+
+  box-shadow: rgb(0, 0, 0) 14px 20px 20px ;
+  
+}
+
+.complete-box{
+  background-color: rgba(96, 185, 88, 0.705);
+}
+
+.incomplete-box{
+  background-color: rgba(221, 127, 98, 0.705);
+}
+
 
 @keyframes fade-in{
   0% {

@@ -13,6 +13,10 @@ body::-webkit-scrollbar {
   flex-direction: column;
 }
 
+label { 
+  font-size: 30px;
+  font-weight: bold;
+}
 
 .toDoForm{
   margin: 0 30px;
@@ -27,65 +31,30 @@ body::-webkit-scrollbar {
 }
 
 
+
+
+
 .to-do-container{
   display: flex;
   flex-direction: row;
   
 }
 
-.complete-mark{
-  color: blueviolet;
-  background-color: rgba(130, 214, 214, 0.26);
-  font-size: 50px;
-}
 
-.incomplete-mark{
-  background-color: rgba(214, 130, 196, 0.26);
-  font-size: 50px;
-
-}
-
-.complete-mark:hover, .incomplete-mark:hover{
-  animation: fade-in 2s ease-in; 
-  cursor: pointer;
-}
-
-.complete, .incomplete {
-  font-size: 30px;
-  font-weight: 700;
-  
-}
-
-
-
-.description{
-  font-size: 40px;
-  
-  
-}
-
-.description-div{
-  max-height: 13vmin ;
-  overflow: scroll;
-  overflow-wrap: break-word
-}
-
-
-
-
-
-
+/* Div containing the boxes */
 .incomplete-div, .complete-div{
-
-  margin: 0 10vmin;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-content: flex-start;
-  
 }
 
 
+.incomplete-div{
+  display: flex;
+  flex-direction: column;
+}
 
+/* The Box itself that makes it look like sticky notes  */
 .complete-box, .incomplete-box {
   margin: 1em 0;
 
@@ -93,7 +62,7 @@ body::-webkit-scrollbar {
   min-width: 25em;
 
   max-width: 25em;
-  max-height: 30em;
+  max-height: 20em;
 
   box-shadow: rgb(0, 0, 0) 14px 20px 20px ;
   
@@ -104,8 +73,88 @@ body::-webkit-scrollbar {
 }
 
 .incomplete-box{
+  
   background-color: rgba(221, 127, 98, 0.705);
 }
+
+
+/* emoji for the mark */
+.complete-mark{
+  color: blueviolet;
+  background-color: rgba(130, 214, 214, 0.26);
+  font-size: 50px;
+  margin: 0%;
+  
+}
+
+.incomplete-mark{
+  background-color: rgba(214, 130, 196, 0.26);
+  margin: 0%;
+  font-size: 50px;
+
+}
+
+.complete-mark:hover, .incomplete-mark:hover{
+  animation: fade-in 2s ease-in; 
+  cursor: pointer;
+}
+
+/* Mark Complete text */
+.complete, .incomplete {
+  margin: 0%;
+  font-size: 30px;
+  font-weight: 700;
+  
+}
+
+
+/* The text given from form */
+.description{
+  font-size: 40px;
+}
+
+/* The Div that contains the description */
+.description-div{
+  max-height: 13vmin ;
+  border: 1px solid black;
+  overflow-y: scroll;
+  overflow-wrap: break-word
+  
+}
+
+/* Another class name for the description-div */
+.incomplete-desc {
+  background-color: rgba(173, 91, 66, 0.726);
+}
+
+.complete-desc{
+  background-color: rgba(81, 150, 75, 0.856);
+}
+
+/* Changes the scroll bar itself */
+.description-div::-webkit-scrollbar {
+  outline: 2px solid rgb(0, 26, 255);
+  border-radius: 10px;
+  width: 12px;
+  
+}
+
+
+/* changes the track of the scroll */
+.description-div::-webkit-scrollbar-track{
+  border-radius: 10px;
+  background-color: rgb(38, 141, 84);
+  -webkit-box-shadow: 0 0 6px rgb(0, 0, 0);
+}
+
+/* changes the draggable scrolling element */
+.description-div::-webkit-scrollbar-thumb{
+  border-radius: 10px;
+  background-color: rgb(119, 117, 106);
+  -webkit-box-shadow: 0 0 6px rgb(0, 0, 0);
+  
+}
+
 
 
 @keyframes fade-in{

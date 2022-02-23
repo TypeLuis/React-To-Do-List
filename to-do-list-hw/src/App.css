@@ -1,4 +1,4 @@
-body{
+body {
   background-color: rgb(71, 121, 121);
 }
 
@@ -13,12 +13,12 @@ body::-webkit-scrollbar {
   flex-direction: column;
 }
 
-label { 
+label {
   font-size: 30px;
   font-weight: bold;
 }
 
-.toDoForm{
+.toDoForm {
   margin: 0 30px;
   border: 1px solid gray;
   border-radius: 5%;
@@ -26,100 +26,90 @@ label {
   justify-content: space-evenly;
 }
 
-#submit:hover{
+#submit:hover {
   background-color: yellowgreen;
 }
 
-
-
-
-
-.to-do-container{
+.to-do-container {
   display: flex;
   flex-direction: row;
-  
 }
 
-
 /* Div containing the boxes */
-.incomplete-div, .complete-div{
+.incomplete-div,
+.complete-div {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
 }
 
-
-.incomplete-div{
+.incomplete-div {
   display: flex;
   flex-direction: column;
 }
 
 /* The Box itself that makes it look like sticky notes  */
-.complete-box, .incomplete-box {
+.complete-box,
+.incomplete-box {
   margin: 1em 0;
 
-  min-height: 20em;  
+  min-height: 20em;
   min-width: 25em;
 
   max-width: 25em;
   max-height: 20em;
 
-  box-shadow: rgb(0, 0, 0) 14px 20px 20px ;
-  
+  box-shadow: rgb(0, 0, 0) 14px 20px 20px;
 }
 
-.complete-box{
+.complete-box {
   background-color: rgba(96, 185, 88, 0.705);
 }
 
-.incomplete-box{
-  
+.incomplete-box {
   background-color: rgba(221, 127, 98, 0.705);
 }
 
-
 /* emoji for the mark */
-.complete-mark{
+.complete-mark {
   color: blueviolet;
   background-color: rgba(130, 214, 214, 0.26);
-  font-size: 50px;
+  font-size: 60px;
+  max-height: 70px;
   margin: 0%;
-  
 }
 
-.incomplete-mark{
+.incomplete-mark {
   background-color: rgba(214, 130, 196, 0.26);
   margin: 0%;
   font-size: 50px;
-
 }
 
-.complete-mark:hover, .incomplete-mark:hover{
-  animation: fade-in 2s ease-in; 
+.complete-mark:hover,
+.incomplete-mark:hover {
+  animation: fade-in 2s ease-in;
   cursor: pointer;
 }
 
 /* Mark Complete text */
-.complete, .incomplete {
+.complete,
+.incomplete {
   margin: 0%;
   font-size: 30px;
   font-weight: 700;
-  
 }
 
-
 /* The text given from form */
-.description{
+.description {
   font-size: 40px;
 }
 
 /* The Div that contains the description */
-.description-div{
-  max-height: 13vmin ;
+.description-div {
+  max-height: 13vmin;
   border: 1px solid black;
   overflow-y: scroll;
-  overflow-wrap: break-word
-  
+  overflow-wrap: break-word;
 }
 
 /* Another class name for the description-div */
@@ -127,41 +117,50 @@ label {
   background-color: rgba(173, 91, 66, 0.726);
 }
 
-.complete-desc{
+.complete-desc {
   background-color: rgba(81, 150, 75, 0.856);
 }
 
 /* Changes the scroll bar itself */
 .description-div::-webkit-scrollbar {
-  outline: 2px solid rgb(0, 26, 255);
+  /* outline: 2px solid rgb(0, 26, 255); */
   border-radius: 10px;
   width: 12px;
-  
 }
 
+.description-div::-webkit-scrollbar:hover {
+  outline: 2px solid rgb(0, 26, 255);
+}
 
 /* changes the track of the scroll */
-.description-div::-webkit-scrollbar-track{
-  border-radius: 10px;
+.description-div::-webkit-scrollbar-track {
+  border-radius: 3px;
   background-color: rgb(38, 141, 84);
   -webkit-box-shadow: 0 0 6px rgb(0, 0, 0);
 }
 
 /* changes the draggable scrolling element */
-.description-div::-webkit-scrollbar-thumb{
+.description-div::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background-color: rgb(119, 117, 106);
   -webkit-box-shadow: 0 0 6px rgb(0, 0, 0);
-  
+  transition: background-color 1s ease;
 }
 
-
-
-@keyframes fade-in{
+@keyframes fade-out {
+  100% {
+    opacity: 1;
+  }
   0% {
-    opacity:.5;
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0.5;
   }
   100% {
-    opacity:1;
+    opacity: 1;
   }
 }

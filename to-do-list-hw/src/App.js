@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import { useState } from 'react'
 import './App.css';
 import ToDoForm from './components/ToDoForm';
 import ToDoList from './components/ToDoList';
@@ -15,7 +15,7 @@ function App() {
 
 
 
-  const handleSubmit = (e)=>{
+  const handleSubmit = (e) => {
 
     e.preventDefault();
 
@@ -23,8 +23,8 @@ function App() {
 
     // creates an object for submitted form
     const toDoObject = {
-      description : toDoForm,
-      completed : false
+      description: toDoForm,
+      completed: false
     }
 
     // adds object to the toDoList array
@@ -32,11 +32,15 @@ function App() {
 
   }
 
+
+  // console.log([...toDoList][2]._id)
   const handleToggle = (index) => {
 
-    
+
     // an array of every toDoObject
     const stateCopy = [...toDoList]
+    // console.log(stateCopy)
+    // console.log([...toDoList][2]._id)
 
     // gets one object from array through index parameter
     // changes completed boolean to vice versa true or false
@@ -54,21 +58,21 @@ function App() {
       <h1>My To Do List</h1>
 
 
-      <ToDoForm 
+      <ToDoForm
 
-        handleSubmit = {handleSubmit}
-        setSwitchValue = {setSwitchValue}
-        setTodo = {setTodo}
-        toDoForm = {toDoForm}
-        switchValue = {switchValue}
-      
+        handleSubmit={handleSubmit}
+        setSwitchValue={setSwitchValue}
+        setTodo={setTodo}
+        toDoForm={toDoForm}
+        switchValue={switchValue}
+
       />
 
 
       <ToDoList
 
-        toDoList = {toDoList}
-        handleToggle = {handleToggle}
+        toDoList={toDoList}
+        handleToggle={handleToggle}
 
       />
 

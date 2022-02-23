@@ -7,7 +7,7 @@ const ToDoForm = (props) =>{
 
             <form onSubmit={props.handleSubmit}>
 
-            <label for="to-do-form">Todo : </label>
+                <label for="to-do-form">Todo : </label>
                 
                 <input type="text" id="to-do-form" className='formText' name='toDo' value={props.switchValue ? '' : props.toDoForm } placeholder="Enter Todo Here"
                 onChange={(e)=>{props.setTodo(e.target.value); props.setSwitchValue(false)}} />
@@ -16,7 +16,6 @@ const ToDoForm = (props) =>{
 
                 <input type='submit' id='submit' value='submit' />
 
-                {/* <label for="submit"></label> */}
             </form>
 
         </div>
